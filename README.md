@@ -40,7 +40,7 @@ while True:
 ```
 ## Mengubah Data
 - Printah dijalankan jika input yang dimasukkan adalah `U`, di dalam kondisi ini terdapat input dan kondisi, dimana jika input `nama` ada didalam variabel `data` maka akan muncul beberapa pilihan untuk mengubah semua data atau data tertentu saja.
-```py    
+    ```py    
     elif x.lower() == 'u':
         print("Ubah Data")
         nama = input("Masukkan Nama   : ")
@@ -53,8 +53,17 @@ while True:
             data[nama] = nim, uts, uas, tugas, n_akhir
         else:
             print("Nama{0} Tidak Ditemukan".format(nama))
-```
+                ```
 
 ## Menghapus Data 
 - Sama seperti mengubah data yang dipilih.
 - Data yang dihapus adalah data yang di input dalam variabel `nama` dimana berisi (string) yang mewakili **NIM, Nilai Tugas, UTS, UAS.** 
+```py
+    elif x.lower() == 'h':
+        print("Hapus Data")
+        nama = input("Masukkan Nama  : ")
+        if nama in data.keys():
+            del data[nama]
+        else:
+            print("Nama {0} Tidak Ditemukan".format(nama))
+```
