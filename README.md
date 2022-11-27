@@ -53,7 +53,6 @@ while True:
             data[nama] = nim, uts, uas, tugas, n_akhir
         else:
             print("Nama{0} Tidak Ditemukan".format(nama))
-                ```
 
 ## Menghapus Data 
 - Sama seperti mengubah data yang dipilih.
@@ -66,4 +65,66 @@ while True:
             del data[nama]
         else:
             print("Nama {0} Tidak Ditemukan".format(nama))
+```
+## Mencari Data
+- Perbandingan untuk mencari data yang akan diubah sama seperti cara mengubah data, hanya saja perintah ini digunakan untuk menampilkan data yang di input berdasarkan nama. Berikut kode yang digunakan.
+    ```py
+    elif x.lower() == 'c':
+        print("Cari Data")
+        nama = input("Masukkan Nama : ")
+        if nama in data.keys():
+            print("=" * 73)
+            print(
+                "|                             Daftar Mahasiswa                          |")
+            print("=" * 73)
+            print(
+                "| Nama            |       NIM       |  UTS  |  UAS  |  Tugas  |  Akhir  |")
+            print("=" * 73)
+            print("| {0:15s} | {1:15d} | {2:5d} | {3:5d} | {4:7d} | {5:7.2f} |"
+                  .format(nama, nim, uts, uas, tugas, n_akhir))
+            print("=" * 73)
+        else:
+            print("Nama {0} Tidak Ditemukan".format(nama))
+
+## Melihat Data
+- Selanjutnya adalah kode yang digunakan untuk melihat input yang sudah dimasukkan.
+- Data dalam perulangan `for` di ambil dari variabel Dictionary `data` pada bagian value yang berbntuk list. variabel `i` digunakan untuk membuat nomer. Data yang akan ditambilkan adalah **Nama, NIM, Nilai Tugas, UTS, UAS** dan **Nilai Akhir**
+    ```py
+    elif x.lower() == 'l':
+        if data.items():
+            print("=" * 78)
+            print(
+                "|                               Daftar Mahasiswa                             |")
+            print("=" * 78)
+            print(
+                "|No. | Nama            |       NIM       |  UTS  |  UAS  |  Tugas  |  Akhir  |")
+            print("=" * 78)
+            i = 0
+            for y in data.items():
+                i += 1
+                print("| {no:2d} | {0:15s} | {1:15d} | {2:5d} | {3:5d} | {4:7d} | {5:7.2f} |"
+                      .format(y[0][:13], y[1][0], y[1][1], y[1][2], y[1][3], y[1][4], no=i))
+                print("=" * 78)
+        else:
+            print("=" * 78)
+            print(
+                "|                               Daftar Mahasiswa                             |")
+            print("=" * 78)
+            print(
+                "|No. | Nama            |       NIM       |  UTS  |  UAS  |  Tugas  |  Akhir  |")
+            print("=" * 78)
+            print(
+                "|                                TIDAK ADA DATA                              |")
+            print("=" * 78)
+
+## Keluar 
+Perulangan diatas adalah perulangan yang akan berjalan terus menerus dan akan berhenti jika kode berikut di eksekusi
+`    elif x.lower() == 'k':`
+- Jika `k` di input dan `lower()` digunakan untuk mengkonversi input yang dimasukkan ke bentuk lower case dan input `k` digunakan berdasarkan perintah yang sudah dimasukan dalam keterangan pada fungsi input dibawah ini:
+```py
+    elif x.lower() == 'k':
+        break
+
+    else:
+        print("Pilih Menu Yang Tersedia")
 ```
