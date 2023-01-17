@@ -1,5 +1,7 @@
 # PRAKTIKUM 5
-
+Syamil Humaidy 
+312210472
+TI.22.B2
 
 ## Program
 dibawah ini adalah program sederhana untuk membuat daftar nilai mahasiswa dengan mnggunakan **Dictionary**, dan menampilkan pilihan **Menu** Tambah, Ubah, Hapus, Cari, dan Lihat.
